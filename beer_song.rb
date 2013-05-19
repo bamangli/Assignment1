@@ -9,8 +9,10 @@ class BeerSong
 	This method implements the constructor
    =end
 
-	def initialize(num_of_bottles)
+   
 
+	def initialize(num_of_bottles)
+	  @bottles_left = num_of_bottles	               
  	end
 
    =begin rdoc
@@ -19,7 +21,7 @@ class BeerSong
    =end
 
 	def empty?()
-
+	   @bottles_left == 0 ? true : false
 	end
 
    =begin rdoc
@@ -27,7 +29,8 @@ class BeerSong
    =end
 
 	def sing_one_verse!()
-	
+	  puts "#{ @bottles_left} bottles of beer on the , #{ @bottles_left} of beer"
+	  take_one_down!()
 	end
 
 	private
@@ -38,7 +41,8 @@ class BeerSong
    =end   
 
 	def take_one_down!()
-
+	  @bottles_left -= 1
+	  puts "take one down, pass it around, #{ @bottles_left} of beer on the wall."
 	end
 
 end
